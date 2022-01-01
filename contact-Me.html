@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Contact Me</title>
+</head>
+
+<body>
+  <h1>My contact details</h1>
+  <ul>
+    <li>Email: <a href="mailto:x.yanni@yahoo.com">x.yanni@yahoo.com</a></li>
+    <li>Tel: <a href="tel:+15133749698">(513) 374-9698</a></li>
+  </ul>
+
+  <!-- form attributes:
+  action: this is where you are submitting the form to
+  method: how you are submmiting it. 2 ways:
+  1. method="GET": append to the URL, send to another page in your Site
+  2. method="POST": saving info to your server (browsers won't be able to render this request, only servers can)
+  enctype="multipart/form-data": when asking to upload files, as they can get very large, we can't send them all at once,
+  it's going to send the file in multiple parts to the server,
+  this is telling the server to look for multiple parts of the file instead of one single file-->
+  <form action="mailto:x.yanni@yahoo.com" method="post" enctype="text/plain">
+    <!-- one way to highlight the input when you click on the label:
+    use "for" attribute in the label and the "id" attribute in the input,
+    use the same terms in both area and it will highlight the input when you click on the label
+    another way to highlight the input when clicking on the label:
+    nest the input inside the label, and the input will be highlighted when you click on the label-->
+    <label for="name">Name:</label><br>
+    <!-- "value" attribute is the default value in the input, "placeholder" is the placeholder text in the input-->
+    <input type="text" name="username" placeholder="username" id="name" required><br>
+
+    <label for="age">Age</label><br>
+    <input type="number" name="age" placeholder="your age" min="1" max="200" step="1" id="age"><br>
+
+    <label for="birthday">Birthdate</label><br>
+    <input type="date" name="birthday" value="" min="1900-01-01" id="birthday"><br>
+    <!-- the benefit of type=tel is when user is on the phone entering data, it will give the the keypad specifically for phone numbers -->
+    <label for="phone">Phone Number</label><br>
+    <input type="tel" name="phone" value="" minlength="9" maxlength="14" placeholder="(123) 456-7890" id="phone"><br>
+
+    <label for="email">Email</label><br>
+    <input type="email" name="email" placeholder="example@gmail.com" id="email" required><br>
+
+    <label for="password">Password</label><br>
+    <input type="password" name="password" placeholder="123456" id="password" required><br>
+
+    Favorite Fruit<br>
+    <input type="checkbox" name="apple" id="apple">
+    <label for="apple">Apple</label><br>
+    <input type="checkbox" name="banana" id="banana">
+    <label for="banana">Banana</label><br>
+    <input type="checkbox" name="peach" id="peach">
+    <label for="peach">Peach</label><br>
+
+    Gender<br>
+    <!-- when using a radio selection, the name attribute needs to be the same to make sure they can only select one.
+    suggest using the label "gender" in this example as the name attribute
+    also use value to indicate what each option represents - so you'll see it when receiving the form-->
+    <input type="radio" name="gender" id="male" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" name="gender" id="female" value="female">
+    <label for="female">Female</label><br>
+
+    Eyecolor<br>
+    <select class="" name="eyecolor" id="eyecolor">
+      <option value="brown">Brown</option>
+      <option value="black">Black</option>
+      <!-- alternative way to write label: include in <option> as an attribute-->
+      <option value="green" label="Green"></option>
+    </select><br>
+
+    Pick Glass Color<br>
+    <select class="" name="favoritecolor" id="favoritecolor" multiple>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="green">Green</option>
+    </select><br>
+
+    <label>Pick Your Favorite Color</label><br>
+    <input type="color" value="#ff0000"><br>
+
+    <label for="bio">Bio</label><br>
+    <!-- keep the textarea html on one line or otherwise whitespace will be included in the text area.-->
+    <textarea name="Bio" rows="8" cols="80" id="bio"></textarea><br>
+
+    <label for="file">File</label>
+    <input type="file" name="file" value="" id="file"><br>
+
+    <!-- this is only needed when you are doing some fancy shit in javascript-->
+    <input type="hidden" name="hidden" value="hi">
+
+    <!-- 2 ways to create a button:
+    1. <input type="button" value="button label>"-->
+    <input type="button" name="reset" value="Reset">
+    <!-- 2. <button type="button/reset/submit">button label</button>-->
+    <button type="reset" name="Clear">Clear</button>
+    <input type="Submit">
+
+</body>
+
+<footer></footer>
+
+</html>
